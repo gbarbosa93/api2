@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 const router = express.Router()
 
+// Listar usuarios
 router.get('/listar', async (req, res) => {
 
     try {
