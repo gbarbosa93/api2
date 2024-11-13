@@ -2,9 +2,11 @@ import express from 'express'
 import publicRoutes from './routes/public.js' // Rota Publica
 import privateRoutes from './routes/private.js'// Rota Privada
 import auth from './middlewares/auth.js' // Middlewares é um intermediador que fica entre a aplicação para validar algumas informações e deixar ela seguir
+import cors from 'cors' // Permite que meu Front-End converse com o Back-End
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.use('/', publicRoutes)// Acesso as rotas publicas
 app.use('/', auth, privateRoutes)// Acesso as rotas privadas
